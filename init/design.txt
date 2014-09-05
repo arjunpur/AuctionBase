@@ -1,0 +1,26 @@
+The result of decomposing the given table led me to the creation of 6 tables that
+seemingly encapsulate the essence of the data set with minimal redundancy.
+
+The 6 tables and their attributes are:
+1) Items(ItemID, Name, Currently, Buy_Price, First_Bid, Number_of_Bids, Started, Ends, Description)
+2) Sellers(UserID, Location, Country, Rating)
+3) Bidders(UserID, Location, Country, Rating)
+4) Bids(UserID, Time, Amount, ItemID)
+5) Sales(UserID,ItemID);
+5) Categories(ItemID, Category)
+
+
+This schema is in 4NF. There are several dependencies that existed in the original table 
+that aided in the decomposition, such as:
+1) ItemID ->-> Category
+2) ItemID -> Name, Currently, Buy_Price, First_Bid, Number_Of_Bids, Started, Ends, Description
+3) UserID ->-> ItemID
+4) UserID -> Location, Country, Rating (for both sellers and bidders)
+5) UserID -> Time, Amount
+
+The decomposition follows simply from the above dependencies. We have one table Items that contains all the details
+of items present in the database and their info related to their bids. We have the Users tables that has all the info
+about sellers and bidders. Bids and Sales are also separate table as per dependencies 5) and 3)
+
+
+

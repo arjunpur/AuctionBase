@@ -1,0 +1,1 @@
+select count(UserID) from (select UserID from Bidders union select UserID from Sellers);

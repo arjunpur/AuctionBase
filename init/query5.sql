@@ -1,0 +1,1 @@
+select count(a) from (select UserID as a from Sellers where Rating > 1000);

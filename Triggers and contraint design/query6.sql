@@ -1,0 +1,1 @@
+select count(*) from Sellers inner join Bidders on Sellers.UserID = Bidders.UserID;
